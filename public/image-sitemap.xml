@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
-    <loc>https://jayaprem.dev/</loc>
+    <loc>https://jayapremvportfolio.vercel.app/</loc>
     <image:image>
       <image:loc>
-        https://jayaprem.dev/icons/jayaprem-v-ui-ux-portfolio.png
+        https://jayapremvportfolio.vercel.app/icons/jayaprem-v-ui-ux-portfolio.png
       </image:loc>
       <image:title>Jayaprem V UI UX Portfolio</image:title>
     </image:image>
