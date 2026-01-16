@@ -1,4 +1,4 @@
-import "./experience.css";
+import "./Experience.css";
 
 const ExperienceOverlay = ({ onClose }) => {
   return (

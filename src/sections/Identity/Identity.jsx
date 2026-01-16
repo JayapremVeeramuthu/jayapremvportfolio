@@ -1,5 +1,5 @@
 import { useState,useEffect, useRef } from "react";
-import "./identity.css";
+import "./Identity.css";
 import "../../styles/grid-dot.css";
 import ExperienceOverlay from "../Experience/ExperienceOverlay";
 

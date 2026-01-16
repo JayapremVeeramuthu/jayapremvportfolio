@@ -1,9 +1,9 @@
-import "./techstack.css";
+import "./TechStack.css";
 
 const TechStackFinal = () => {
   return (
     
-    <section  id="toolset" className="tsf-section">
+    <section  id="techstack" className="tsf-section">
       <h1 className="tsf-title">TECH STACK / TOOL SET</h1>
 
       <div className="tsf-capsule">

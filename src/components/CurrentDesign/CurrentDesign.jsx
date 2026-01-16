@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./currentDesign.css";
+import "./CurrentDesign.css";
 
 const CurrentDesign = () => {
   const [isDesign, setIsDesign] = useState(true);

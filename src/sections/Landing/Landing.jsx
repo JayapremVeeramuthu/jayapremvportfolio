@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import "./landing.css";
+import "./Landing.css";
 import "../../styles/grid.css";
 import Navbar from "../../components/Navbar/Navbar";
 import CurrentDesign from "../../components/CurrentDesign/CurrentDesign";

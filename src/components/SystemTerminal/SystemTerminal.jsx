@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./systemTerminal.css";
+import "./SystemTerminal.css";
 
 const lines = [
   "> initializing system...",
