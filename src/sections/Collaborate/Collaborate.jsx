@@ -1,4 +1,4 @@
-import "./collaborate.css";
+import "./Collaborate.css";
 
 const Collaborate = () => {
   return (

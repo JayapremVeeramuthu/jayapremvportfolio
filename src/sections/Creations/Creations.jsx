@@ -1,4 +1,4 @@
-import "./Creations.css";
+import "./creations.css";
 
 export default function Creations() {
   return (
