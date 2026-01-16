@@ -1,0 +1,50 @@
+.system-terminal {
+  position: absolute;
+  left: 80px;
+  bottom: 90px; /* marquee mela irukka */
+  width: 420px;
+  height: 96px; /* FIXED HEIGHT = no layout shift */
+  overflow: hidden;
+
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  color: #00ff9c;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* EACH LINE */
+.terminal-line {
+  margin: 4px 0;
+  white-space: nowrap;
+  line-height: 1.4;
+
+  /* animation polish */
+  animation: growIn 0.25s ease-out forwards;
+}
+
+/* SUBTLE SIZE GROW (does NOT push layout) */
+@keyframes growIn {
+  from {
+    transform: scale(0.96);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* CURSOR */
+.cursor {
+  margin-left: 2px;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

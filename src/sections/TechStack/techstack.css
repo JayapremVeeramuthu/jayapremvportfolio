@@ -1,0 +1,219 @@
+/* SECTION */
+.tsf-section {
+  padding: 120px 80px;
+  background: #000;
+  color: #fff;
+  background-image: radial-gradient(#222 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* TITLE */
+.tsf-title {
+  font-size: 96px;
+  font-weight: 900;
+  margin-bottom: 60px;
+}
+
+/* CAPSULE – EXACT LOOK */
+.tsf-capsule {
+  position: relative;
+  height: 320px;
+  background: #f4eee9;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.14) 1px, transparent 1px);
+  background-size: 48px 48px;
+
+  /* 👇 THIS IS THE MAGIC */
+  border-radius: 160px 220px 220px 160px;
+
+  overflow: hidden;
+}
+
+/* LABEL */
+.tsf-label {
+  position: absolute;
+  bottom: 24px;
+  left: 60px;
+  font-size: 34px;
+  font-weight: 900;
+  color: #000;
+  z-index: 10;
+}
+
+/* PROFILE IMAGE */
+.tsf-profile {
+  position: absolute;
+  left: 40%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  height: 300px;
+  filter: grayscale(1) blur(3px);
+  opacity: 0.9;
+  z-index: 4;
+}
+
+/* ICON BASE */
+.tsf-icon {
+  position: absolute;
+  width: 92px;
+  filter: blur(0.7px);
+  animation: float 6s ease-in-out infinite;
+  z-index: 6;
+}
+
+/* LEFT ICONS */
+.ps { left: 370px; top: 130px; transform: rotate(-19deg); }
+.figma { left: 250px; top: 60px; transform: rotate(12deg); }
+.lr { left: 210px; top: 150px; }
+.wp { left: 100px; top: 200px; }
+
+/* RIGHT ICONS */
+.html { right: 360px; top: 90px; transform: rotate(10deg); }
+.js { right: 260px; top: 70px; transform: rotate(-12deg); }
+.css { right: 370px; top: 190px; }
+.react { right: 140px; top: 130px; }
+.java { right: 240px; top: 170px; }
+
+/* FLOAT */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+/* SERVICE BAR */
+.tsf-service {
+  margin-top: 36px;
+  background: #baff00;
+  color: #000;
+  padding: 18px 32px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.tsf-profile {
+  position: absolute;
+
+  /* KEEP IMAGE INSIDE CAPSULE */
+  left: 50%;
+  bottom: -40px;
+
+  /* SAFE SIZE */
+  height: 860px;
+
+  /* LEFT TILT */
+  transform: translateY(-70%) rotate(-50deg);
+  transform-origin: bottom center;
+
+  /* STYLE */
+  filter: grayscale(1) blur(0px);
+  opacity: 0.95;
+
+  /* SOFT BOTTOM FADE */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0,0,0,1) 65%,
+    rgba(0,0,0,0) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0,0,0,1) 65%,
+    rgba(0,0,0,0) 100%
+  );
+
+  z-index: 4;
+  pointer-events: none;
+}
+/* INCREASE ONLY THIS ICON SIZE */
+.tsf-icon.lr {
+  width: 155px;          /* try 90–110 if needed */
+  filter: blur(0.2px); /* little sharper */
+}
+
+.tsf-service {
+  margin-top: 36px;
+  background: #baff00;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 18px 0;
+}
+
+.tsf-marquee {
+  display: inline-block;
+  padding-left: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+
+  animation: marqueeMove 14s linear infinite;
+}
+
+@keyframes marqueeMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* SERVICE MARQUEE BAR */
+.tsf-service {
+  position: relative;
+  width: 100vw;                 /* FULL SCREEN WIDTH */
+  left: 50%;
+  transform: translateX(-50%);  /* CENTER ALIGN FULL WIDTH */
+
+  margin-top: 40px;
+  background: #baff00;
+  overflow: hidden;
+  padding: 28px 0;              /* HEIGHT OF BAR */
+}
+
+/* MARQUEE TRACK */
+.tsf-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeLoop 16s linear infinite;
+}
+
+/* TEXT STYLE */
+.tsf-marquee-track span {
+  padding-right: 80px;
+  white-space: nowrap;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+  font-size: 48px;              /* 🔥 BIG FONT */
+  font-weight: 1000;
+  letter-spacing: 0.5px;
+  color: #000;
+}
+
+/* ANIMATION */
+@keyframes marqueeLoop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+/* SERVICE MARQUEE BAR WITH GRID */
+.tsf-service {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 40px;
+
+  background-color: #baff00;
+
+  /* GRID INSIDE */
+  background-image:
+    linear-gradient(rgba(0,0,0,0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.15) 1px, transparent 1px);
+  background-size: 48px 48px;
+
+  overflow: hidden;
+  padding: 28px 0;
+}

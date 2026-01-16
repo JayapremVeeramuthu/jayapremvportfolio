@@ -1,0 +1,326 @@
+.landing {
+  position: relative;
+  min-height: 100vh;
+}
+
+.hero-text {
+  padding: 160px 80px;
+}
+
+.hero-text h1 {
+  font-size: 96px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.intro {
+  margin-top: 24px;
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+.bottom-strip {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #b6ff00;
+  color: #000;
+  padding: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+.bottom-strip {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #b6ff00;
+  color: #000;
+  overflow: hidden;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+}
+
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 18s linear infinite;
+}
+
+.marquee span {
+  white-space: nowrap;
+  padding-right: 40px;
+  font-size: 15px;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.system-text {
+  margin-top: 32px;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  color: #00ff9c;
+}
+
+.system-text .line {
+  opacity: 0;
+  animation: typeIn 0.4s forwards;
+}
+
+.delay1 { animation-delay: 0.8s; }
+.delay2 { animation-delay: 1.6s; }
+.delay3 { animation-delay: 2.4s; }
+
+@keyframes typeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.bottom-strip {
+  will-change: transform;
+}
+
+.marquee {
+  animation: scroll-left 16s linear infinite;
+}
+.system-text .line {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 1.2s steps(30, end) forwards;
+}
+
+.delay1 { animation-delay: 0.8s; }
+.delay2 { animation-delay: 1.6s; }
+.delay3 { animation-delay: 2.4s; }
+
+@keyframes typing {
+  from {
+    width: 0;
+    opacity: 1;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+.marquee span {
+  white-space: nowrap;
+  padding-right: 80px;
+  font-size: 22px;        /* BIG TEXT */
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 14s linear infinite;
+}
+.marquee span {
+  overflow: hidden;
+  white-space: nowrap;
+  width: fit-content;
+  animation:
+    marqueeTyping 2.2s steps(40, end) 1,
+    scroll-left 14s linear infinite;
+}
+@keyframes marqueeTyping {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+.bottom-strip:hover .marquee {
+  animation-play-state: paused;
+}
+/* TERMINAL TYPING EFFECT */
+.system-text {
+  margin-top: 32px;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  color: #00ff9c;
+}
+
+.system-text .line {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  border-right: 2px solid #00ff9c;
+  animation: typing 2.4s steps(40, end) forwards,
+             blink 0.8s step-end infinite;
+}
+
+/* delays */
+.delay1 { animation-delay: 0.4s; }
+.delay2 { animation-delay: 2.8s; }
+.delay3 { animation-delay: 5.2s; }
+.delay4 { animation-delay: 7.6s; }
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+/* MARQUEE STRIP */
+.bottom-strip {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 56px;
+  background: #b6ff00;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  animation: marquee-scroll 14s linear infinite;
+}
+
+.marquee-track span {
+  font-size: 18px;          /* BIG text */
+  font-weight: 900;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+/* Smooth infinite scroll */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause on hover (optional, nice UX) */
+.bottom-strip:hover .marquee-track {
+  animation-play-state: paused;
+}
+/* FIX: make typing text visible */
+.system-text {
+  position: relative;
+  margin-left: 80px;   /* aligns with hero text */
+}
+
+.system-text .line {
+  display: inline-block;
+  max-width: 100%;
+  width: auto;                 /* 🔑 FIX */
+  opacity: 1;
+}
+
+/* REAL terminal typing */
+.system-text .type {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #00ff9c;
+  animation:
+    typing-real 2.5s steps(40, end) forwards,
+    cursor-blink 0.8s step-end infinite;
+}
+
+/* timing */
+.delay1 { animation-delay: 0.5s; }
+.delay2 { animation-delay: 3s; }
+.delay3 { animation-delay: 5.5s; }
+.delay4 { animation-delay: 8s; }
+
+@keyframes typing-real {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes cursor-blink {
+  50% { border-color: transparent; }
+}
+.bottom-strip {
+  position: fixed; /* 👈 absolute illa */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 52px;
+
+  background: #b6ff00;
+  color: #000;
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+  overflow: hidden;
+  z-index: 999;
+}
+.bottom-strip {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 52px;
+  background: #b6ff00;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  font-weight: 900;
+   background-image:
+    linear-gradient(rgba(0,0,0,0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 20s linear infinite;
+}
+
+.marquee-content {
+  display: flex;
+}
+
+.marquee-content span {
+  white-space: nowrap;
+  margin-right: 48px;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+/* 🔁 PERFECT LOOP */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ================================
+   LANDING – RETURN PARALLAX
+================================ */
+
+.landing {
+  will-change: transform;
+  transition: transform 0.1s linear;
+}

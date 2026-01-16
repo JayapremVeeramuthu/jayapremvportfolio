@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jayaprem.dev/sitemap.xml
+Sitemap: https://jayaprem.dev/image-sitemap.xml
