@@ -183,7 +183,7 @@ const Identity = () => {
 
       {/* PROFILE */}
       <div className="card profile-card">
-        <img src="/icons/Screenshot 2026-01-15 224000.png" alt="Jayaprem" />
+        <img src="/icons/jayaprem-v-ui-ux-portfolio.png" alt="Jayaprem" />
       </div>
 
       {/* ABOUT */}
