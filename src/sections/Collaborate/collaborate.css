@@ -1,3 +1,7 @@
+/* ===============================
+   COLLABORATE SECTION
+================================ */
+
 .collab-section {
   position: relative;
   padding: 140px 90px 200px;
@@ -11,7 +15,8 @@
   background-size: 40px 40px;
 }
 
-/* WATERMARK NAME */
+/* ================= WATERMARK ================= */
+
 .collab-watermark {
   position: absolute;
   bottom: 40px;
@@ -19,24 +24,25 @@
   font-size: 240px;
   font-weight: 900;
   letter-spacing: 10px;
-  color: rgba(255, 255, 255, 0.173);
+  color: rgba(255,255,255,0.15);
   pointer-events: none;
   user-select: none;
   z-index: 0;
+  white-space: nowrap;
 }
 
-/* TITLE */
+/* ================= TITLE ================= */
+
 .collab-title {
   position: relative;
   z-index: 2;
   font-size: 112px;
   font-weight: 900;
-  letter-spacing: -3px;
-  line-height: 1;
   margin-bottom: 90px;
 }
 
-/* LAYOUT */
+/* ================= LAYOUT ================= */
+
 .collab-layout {
   position: relative;
   z-index: 2;
@@ -45,25 +51,27 @@
   gap: 70px;
 }
 
-/* GLASS CARD */
+/* ================= CARD ================= */
+
 .collab-card {
   position: relative;
-  padding: 64px;
+  padding: 56px;
   border-radius: 30px;
 
   background: rgba(255,255,255,0.06);
   backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
 
   border: 1px solid rgba(255,255,255,0.25);
+
   box-shadow:
     inset 0 0 0 1px rgba(255,255,255,0.05),
-    0 20px 40px rgba(0,0,0,0.6);
+    0 30px 60px rgba(0,0,0,0.7);
 }
 
-/* LEFT CARD */
+/* ================= LEFT ================= */
+
 .collab-left p {
-  font-size: 32px;
+  font-size: 30px;
   line-height: 1.5;
   font-weight: 600;
 }
@@ -73,205 +81,129 @@
   font-weight: 900;
 }
 
-/* RIGHT CARD */
+/* ================= RIGHT ================= */
+
 .collab-right h3 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 36px;
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 34px;
 }
 
-/* SOCIAL ICONS */
+/* ================= SOCIAL ICONS ================= */
+
 .social-icons {
   display: grid;
-  grid-template-columns: repeat(3, 76px);
+  grid-template-columns: repeat(3, 72px);
   gap: 22px;
-  margin-bottom: 46px;
+  margin-bottom: 44px;
 }
 
 .icon {
-  width: 76px;
-  height: 76px;
+  width: 72px;
+  height: 72px;
   border-radius: 18px;
 
   background: rgba(255,255,255,0.12);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 18px;
-  font-weight: 700;
+  transition: all 0.25s ease;
 }
 
-/* BUTTON */
+.icon img {
+  width: 28px;
+  filter: brightness(0) invert(1);
+}
+
+/* HOVER (DESKTOP) */
+.icon:hover {
+  background: #a6ff00;
+  box-shadow: 0 0 22px rgba(166,255,0,0.6);
+  transform: translateY(-6px);
+}
+
+.icon:hover img {
+  filter: none;
+}
+
+/* ================= BUTTON ================= */
+
 .contact-btn {
   background: #a6ff00;
   color: #000;
   border: none;
   padding: 18px 46px;
   border-radius: 14px;
-
   font-size: 16px;
   font-weight: 900;
-  letter-spacing: 0.5px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.25s ease;
 }
 
-.collab-section {
-  animation: sectionFadeIn 1.2s ease forwards;
-}
-
-@keyframes sectionFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* WATERMARK FLOAT */
-.collab-watermark {
-  animation: watermarkFloat 10s ease-in-out infinite;
-}
-
-@keyframes watermarkFloat {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-18px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-/* TITLE REVEAL */
-.collab-title {
-  animation: titleReveal 1.1s ease forwards;
-}
-
-@keyframes titleReveal {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* CARD FLOATING */
-.collab-card {
-  animation: cardFloat 6s ease-in-out infinite;
-}
-
-.collab-left {
-  animation-delay: 0s;
-}
-
-.collab-right {
-  animation-delay: 0.6s;
-}
-
-@keyframes cardFloat {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-14px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-/* GLASS SHINE ON HOVER */
-.collab-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,0.12),
-    transparent
-  );
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.collab-card:hover::after {
-  opacity: 1;
-}
-
-/* SOCIAL ICON FLOAT */
-.icon {
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.icon:hover {
-  transform: translateY(-8px) scale(1.05);
-  background: rgba(255,255,255,0.2);
-}
-
-/* BUTTON PULSE */
-.contact-btn {
-  animation: buttonPulse 2.5s ease-in-out infinite;
-}
-
-@keyframes buttonPulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(166,255,0,0.5);
-  }
-  70% {
-    box-shadow: 0 0 0 18px rgba(166,255,0,0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(166,255,0,0);
-  }
-}
-
-/* BUTTON HOVER LIFT */
 .contact-btn:hover {
-  transform: translateY(-4px);
-}
-/* SOCIAL ICON IMAGES FIX */
-.social-icons .icon img {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-  filter: brightness(0) invert(1); /* white icons */
-  transition: filter 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0 30px rgba(166,255,0,0.6);
 }
 
-/* ICON HOVER – IMAGE RESPONSE */
-.social-icons .icon:hover img {
-  transform: scale(1.1);
-}
+/* =================================================
+   🔥 MOBILE FIX – SAME LOOK
+================================================= */
 
-/* GLASS SHINE ON HOVER – FIXED */
-.collab-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,0.12),
-    transparent
-  );
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none; /* 🔥 MOST IMPORTANT */
-}
+@media (max-width: 768px) {
 
-.collab-card:hover::after {
-  opacity: 1;
+  .collab-section {
+    padding: 90px 20px 150px;
+    overflow: visible;
+  }
+
+  .collab-title {
+    font-size: 46px;
+    margin-bottom: 40px;
+  }
+
+  .collab-watermark {
+    font-size: 50px;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    letter-spacing: 4px;
+    opacity: 0.25;
+  }
+
+  .collab-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .collab-card {
+    padding: 26px;
+  }
+
+  .collab-left p {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  /* ICON GRID SAME AS IMAGE */
+  .social-icons {
+    grid-template-columns: repeat(3, 60px);
+    gap: 18px;
+    justify-content: center;
+  }
+
+  .icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .icon img {
+    width: 24px;
+  }
+
+  .contact-btn {
+    padding: 16px;
+  }
 }

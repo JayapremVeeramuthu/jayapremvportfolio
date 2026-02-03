@@ -1,68 +1,80 @@
-/* =========================================================
-   CREATIONS – CLEAN FINAL VERSION (SAFE)
-   ========================================================= */
+/* =================================================
+   CREATIONS – BASE
+================================================= */
 
-/* ===== ROOT (LOCKED) ===== */
 .creations-section {
   padding: 140px 90px;
-  color: #fff;
   background: #000;
+  color: #fff;
+  overflow: visible;
 }
 
-/* ===== HEADER ===== */
+/* ================= HEADER ================= */
+
 .creations-header {
-  position: relative;
   max-width: 1400px;
 }
 
 .creations-title {
-  font-size: 140px;
+  font-size: 120px;
   font-weight: 900;
-  letter-spacing: -3px;
   line-height: 1;
 }
 
 .creations-subrow {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  gap: 24px;
+  margin-top: 16px;
 }
 
 .creations-subrow p {
-  font-size: 52px;
+  font-size: 42px;
   font-weight: 800;
-  line-height: 1.1;
-  max-width: 900px;
 }
 
 .creations-subrow span {
   color: #b6ff00;
 }
 
-.creations-explore {
-  background: #b6ff00;
-  color: #000;
-  padding: 6px 12px;
-  font-size: 14px;
-  font-weight: 800;
-  transform: translateY(-10px);
-}
-
-/* =========================================================
-   L-SHAPE POSTER COLLAGE (FINAL)
-   ========================================================= */
+/* ================= COLLAGE ================= */
 
 .creations-collage {
   position: relative;
-  margin-top: 50px;
-  height: 240px;
+  margin-top: 60px;
+  min-height: 360px;
 }
 
-/* RIGHT VERTICAL POSTERS */
+/* HORIZONTAL ROW */
+.creations-horizontal {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  gap: 24px;
+}
+
+.creations-horizontal img {
+  width: 200px;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+/* FEATURED POSTER */
+.creations-featured-poster {
+  position: absolute;
+  right: 300px;
+  top: -260px;
+  width: 260px;
+  z-index: 6;
+  border-radius: 8px;
+  --r: -2deg;
+}
+
+/* VERTICAL POSTERS */
 .creations-vertical {
   position: absolute;
   right: 0;
-  top: -350px; /* aligns with heading */
+  top: -260px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -70,166 +82,499 @@
 
 .creations-vertical img {
   width: 220px;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
-/* BOTTOM HORIZONTAL POSTERS */
-.creations-horizontal {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  display: flex;
-  gap: 24px;
-  padding-right: 260px; /* space for vertical posters */
+/* FLOAT ANIMATION */
+@keyframes floatPoster {
+  0%,100% { transform: translateY(0) rotate(var(--r)); }
+  50%     { transform: translateY(-18px) rotate(var(--r)); }
 }
 
-.creations-horizontal img {
-  width: 200px;
-  border-radius: 6px;
-}
-
-/* =========================================================
-   INDIVIDUAL FLOAT ANIMATION (NO CONFLICT)
-   ========================================================= */
-
-@keyframes individualFloat {
-  0% {
-    transform: translateY(0) rotate(var(--r));
-  }
-  50% {
-    transform: translateY(-22px) rotate(calc(var(--r) + 1deg));
-  }
-  100% {
-    transform: translateY(0) rotate(var(--r));
-  }
-}
-
-/* APPLY FLOAT */
 .creations-horizontal img,
-.creations-vertical img {
-  animation: individualFloat 6.5s ease-in-out infinite;
-  will-change: transform;
-  filter: drop-shadow(0 30px 50px rgba(0,0,0,0.45));
+.creations-vertical img,
+.creations-featured-poster {
+  animation: floatPoster 6s ease-in-out infinite;
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.6));
 }
 
-/* HORIZONTAL – STAGGER */
-.creations-horizontal img:nth-child(1) { --r: -3deg; animation-delay: 0s; }
-.creations-horizontal img:nth-child(2) { --r: 2deg;  animation-delay: 0.8s; }
-.creations-horizontal img:nth-child(3) { --r: -1deg; animation-delay: 1.6s; }
-.creations-horizontal img:nth-child(4) { --r: 3deg;  animation-delay: 2.4s; }
-.creations-horizontal img:nth-child(5) { --r: -2deg; animation-delay: 3.2s; }
-
-/* VERTICAL – STAGGER */
-.creations-vertical img:nth-child(1) { --r: 2deg;  animation-delay: 0.4s; }
-.creations-vertical img:nth-child(2) { --r: -2deg; animation-delay: 1.6s; }
-
-/* HOVER PAUSE */
-.creations-horizontal img:hover,
-.creations-vertical img:hover {
-  animation-play-state: paused;
-  transform: scale(1.06) rotate(0deg);
-  transition: transform 0.35s ease;
-}
-
-/* =========================================================
-   CENTER BREAK
-   ========================================================= */
+/* ================= CENTER TEXT ================= */
 
 .creations-break {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 120px 0 80px;
+  margin: 140px 0 90px;
 }
 
 .creations-break h2 {
-  font-size: 110px;
+  font-size: 96px;
   font-weight: 900;
-  letter-spacing: -3px;
 }
 
 .creations-break span {
   color: #b6ff00;
+  font-weight: 700;
 }
 
-/* =========================================================
-   STACK SCROLL CARDS (UNCHANGED)
-   ========================================================= */
 
-.creations-stack {
-  position: relative;
-  height: 220vh;
-}
-
-.creations-card {
-  position: sticky;
-  top: 120px;
-  height: 420px;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  background: #111;
-  border-radius: 32px;
-  overflow: hidden;
-  box-shadow: 0 60px 120px rgba(0,0,0,0.75);
-}
-
-.creations-card.one { margin-top: 0; }
-.creations-card.two { margin-top: 160px; }
+.creations-card.one   { margin-top: 0; }
+.creations-card.two   { margin-top: 160px; }
 .creations-card.three { margin-top: 320px; }
 
+/* IMAGE */
 .creations-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+/* INFO (GREEN PANEL) */
 .creations-info {
   background: #b6ff00;
   color: #000;
-  padding: 40px;
-  position: relative;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.creations-info h3 {
-  font-size: 32px;
+/* =================================================
+   📱 MOBILE – SAFE STICKY (NO BREAK)
+================================================= */
+
+@media (max-width: 768px) {
+
+  .creations-section {
+    padding: 80px 16px;
+    overflow: visible;
+  }
+
+  .creations-title {
+    font-size: 56px;
+  }
+
+  .creations-subrow {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .creations-subrow p {
+    font-size: 24px;
+  }
+
+  /* COLLAGE */
+  .creations-vertical {
+    display: none;
+  }
+
+  .creations-horizontal {
+    position: relative;
+    overflow-x: auto;
+    padding-bottom: 12px;
+  }
+
+  .creations-horizontal img {
+    width: 160px;
+  }
+
+  .creations-featured-poster {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 200px;
+    margin-right: 20px;
+    transform: rotate(0deg);
+  }
+
+  /* CENTER TEXT */
+  .creations-break {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    margin: 80px 0 60px;
+  }
+
+  .creations-break h2 {
+    font-size: 42px;
+  }
+
+  /* STACK */
+  .creations-stack {
+    position: relative;
+    overflow: visible;
+  }
+
+  /* REMOVE DESKTOP OFFSETS */
+  .creations-card.one,
+  .creations-card.two,
+  .creations-card.three {
+    margin-top: 0;
+  }
+
+  /* CARD */
+  .creations-card {
+    top: 96px;
+    height: auto;
+    margin-bottom: 32px;
+    grid-template-columns: 1fr;
+  }
+
+  /* IMAGE */
+  .creations-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px 20px 0 0;
+  }
+
+  /* INFO */
+  .creations-info {
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+  }
+}
+
+
+.creations-stack {
+  position: relative;
+  height: 420px; /* SAME AS CARD HEIGHT */
+}
+.creations-card {
+  position: absolute; /* REQUIRED for GSAP stack */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 420px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background: #111;
+  border-radius: 32px;
+  box-shadow: 0 60px 120px rgba(0,0,0,0.75);
+}
+@media (max-width: 768px) {
+  .creations-card {
+    position: relative;
+    height: auto;
+    margin-bottom: 32px;
+  }
+}
+
+
+/* =================================================
+   BASE
+================================================= */
+
+.creations-section {
+  padding: 140px 90px;
+  background: #000;
+  color: #fff;
+}
+
+/* ================= HEADER ================= */
+
+.creations-title {
+  font-size: 120px;
   font-weight: 900;
 }
 
-.creations-info p {
-  margin-top: 18px;
+.creations-subrow {
+  display: flex;
+  gap: 24px;
 }
 
-.creations-info span {
+.creations-subrow p {
+  font-size: 42px;
+  font-weight: 800;
+}
+
+.creations-subrow span {
+  color: #b6ff00;
+}
+
+/* ================= CENTER TEXT ================= */
+
+.creations-break {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 140px 0 90px;
+}
+
+.creations-break h2 {
+  font-size: 96px;
+  font-weight: 900;
+}
+
+.creations-break span {
+  color: #b6ff00;
+}
+/* =================================================
+   GSAP STACK – DESKTOP
+================================================= */
+
+.creations-stack {
+  position: relative;
+  height: calc(420px * 3); /* cards × height */
+}
+
+.creations-card {
   position: absolute;
-  bottom: 30px;
-  right: 30px;
-  font-size: 28px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 420px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background: #111;
+  border-radius: 32px;
+  box-shadow: 0 60px 120px rgba(0,0,0,0.75);
 }
 
-/* ================= FEATURED FIXED POSTER ================= */
+/* IMAGE */
+.creations-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
+/* INFO */
+.creations-info {
+  background: #b6ff00;
+  color: #000;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+
+  .creations-stack {
+    height: auto;
+  }
+
+  .creations-card {
+    position: relative;
+    height: auto;
+    margin-bottom: 32px;
+    grid-template-columns: 1fr;
+  }
+
+  .creations-img img {
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+/* ===============================
+   GSAP MODE OVERRIDES (DESKTOP)
+=============================== */
+
+@media (min-width: 769px) {
+  .creations-stack .creations-card {
+    margin-top: 0 !important;
+  }
+}
+
+
+/* ===============================
+   GSAP STACK – ISOLATED
+=============================== */
+
+.gsap-stack {
+  position: relative;
+  height: auto; /* GSAP handles spacing */
+}
+
+.gsap-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 420px;
+  margin-top: 0 !important; /* kill old margins ONLY here */
+}
+
+
+@media (max-width: 768px) {
+  .gsap-card {
+    position: relative;
+    height: auto;
+  }
+}
+
+
+/* ===============================
+   GSAP STACK – FINAL (ISOLATED)
+=============================== */
+
+.gsap-stack {
+  position: relative;
+}
+
+.gsap-card {
+  position: absolute;
+  inset: 0;
+  height: 420px;
+  margin: 0;
+}
+
+/* Mobile = normal scroll */
+@media (max-width: 768px) {
+  .gsap-card {
+    position: relative;
+    height: auto;
+    margin-bottom: 32px;
+  }
+}
+
+
+/* =================================================
+   CREATIONS – BASE
+================================================= */
+
+.creations-section {
+  padding: 140px 90px;
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* ================= HEADER ================= */
+
+.creations-header {
+  max-width: 1400px;
+}
+
+.creations-title {
+  font-size: 120px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.creations-subrow {
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+  align-items: flex-end;
+}
+
+.creations-subrow p {
+  font-size: 42px;
+  font-weight: 800;
+}
+
+.creations-subrow span {
+  color: #b6ff00;
+  font-weight: 700;
+}
+
+/* ================= COLLAGE ================= */
+
+.creations-collage {
+  position: relative;
+  margin-top: 80px;
+  min-height: 420px;
+}
+
+/* FEATURED POSTER */
 .creations-featured-poster {
   position: absolute;
-
-  /* ADJUST THESE TWO ONLY */
-  right: 330px;     /* move left / right */
-  top: -310px;       /* move up / down */
-
+  right: 300px;
+  top: -240px;
   width: 260px;
-  transform: rotate(-2deg);
-
-  z-index: 6;
-
-  /* OPTIONAL polish */
-  border-radius: 8px;
-  filter: drop-shadow(0 40px 80px rgba(0,0,0,0.6));
+  border-radius: 12px;
+  z-index: 5;
 }
 
-.creations-link {
-  text-decoration: none;
-  color: inherit;
-  /* display: block; */
+/* VERTICAL POSTERS */
+.creations-vertical {
+  position: absolute;
+  right: 0;
+  top: -240px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
+.creations-vertical img {
+  width: 220px;
+  border-radius: 12px;
+}
 
+/* HORIZONTAL POSTERS */
+.creations-horizontal {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  gap: 24px;
+}
+
+.creations-horizontal img {
+  width: 200px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* FLOAT EFFECT */
+@keyframes floatPoster {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+.creations-collage img {
+  animation: floatPoster 6s ease-in-out infinite;
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.6));
+}
+
+/* =================================================
+   📱 MOBILE
+================================================= */
+
+@media (max-width: 768px) {
+
+  .creations-section {
+    padding: 80px 16px;
+  }
+
+  .creations-title {
+    font-size: 56px;
+  }
+
+  .creations-subrow {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .creations-subrow p {
+    font-size: 24px;
+  }
+
+  .creations-vertical {
+    display: none;
+  }
+
+  .creations-collage {
+    min-height: auto;
+  }
+
+  .creations-featured-poster {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 200px;
+    margin-bottom: 24px;
+  }
+
+  .creations-horizontal {
+    position: relative;
+    overflow-x: auto;
+    padding-bottom: 12px;
+  }
+
+  .creations-horizontal img {
+    width: 160px;
+  }
+}
 

@@ -1,11 +1,43 @@
+/* ---------- Global Reset ---------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ---------- Base Body Styles (UNCHANGED DESIGN) ---------- */
 body {
   background-color: #0b0b0b;
+  overflow-x: hidden;
   color: #ffffff;
   font-family: Inter, system-ui, sans-serif;
+}
+
+/* ---------- Media Safety (NO DESIGN CHANGE) ---------- */
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- Mobile-only Fixes ---------- */
+/* Only behavior fix – no color, no layout, no font changes */
+/* =========================================
+   🔥 GLOBAL MOBILE SAFETY
+   ========================================= */
+@media (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  * {
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
 }

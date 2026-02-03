@@ -20,7 +20,7 @@
   border-radius: 50%;
 }
 
-/* ===== Navbar Capsule ===== */
+/* ===== Navbar Capsule (DESKTOP ORIGINAL) ===== */
 .navbar {
   position: absolute;
   top: 90px;
@@ -41,7 +41,9 @@
   list-style: none;
   margin: 0;
   padding: 0;
-}/* ===== Menu Item ===== */
+}
+
+/* ===== Menu Item ===== */
 .navbar li {
   position: relative;
   font-size: 15px;
@@ -50,13 +52,11 @@
   transition: opacity 0.3s ease, color 0.3s ease;
 }
 
-/* hover text brighten */
 .navbar li:hover {
   opacity: 1;
   color: #ffffff;
 }
 
-/* underline base (hidden) */
 .navbar li::after {
   content: "";
   position: absolute;
@@ -70,18 +70,59 @@
   transform: translateX(-50%);
 }
 
-/* hover underline animation */
 .navbar li:hover::after {
   width: 100%;
 }
 
-/* ===== Active Item ===== */
 .navbar li.active {
   color: #00ff9c;
   opacity: 1;
 }
 
-/* active underline always visible */
 .navbar li.active::after {
   width: 100%;
+}
+
+/* =================================================
+   MOBILE FIX — DESKTOP UNCHANGED
+   ================================================= */
+
+/* =========================================
+   🔥 MOBILE NAVBAR FIX (FINAL)
+   ========================================= */
+@media (max-width: 768px) {
+
+  .freelance-bar {
+    height: 44px;
+    font-size: 12px;
+    text-align: center;
+    padding: 0 12px;
+    z-index: 1000;
+  }
+
+  .navbar {
+    position: fixed !important;
+    top: 44px; /* exactly below freelance bar */
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+
+    width: calc(100% - 32px);
+    padding: 14px 16px;
+
+    border-radius: 16px;
+    z-index: 999;
+  }
+
+  .navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .navbar li {
+    font-size: 14px;
+    white-space: nowrap;
+  }
 }

@@ -4,6 +4,7 @@ import Creations from "./sections/Creations/Creations";
 import Identity from "./sections/Identity/Identity";
 import Landing from "./sections/Landing/Landing";
 import TechStack from "./sections/TechStack/TechStack";
+import StickyCreations from "./sections/StickyCreations/StickyCreations";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
       <Identity/>
       <br />
       <Creations/>
+      <br />
+      <StickyCreations /> 
       <br />
       <TechStack/>
       <br />

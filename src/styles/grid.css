@@ -1,3 +1,7 @@
+/* ===============================
+   GRID BACKGROUND (UNCHANGED)
+================================ */
+
 .grid-bg {
   min-height: 100vh;
   width: 100%;
@@ -10,4 +14,30 @@
   background-size: 80px 80px;
 }
 
+/* ===============================
+   MOBILE FIX – ONLY STACK CARDS
+   NO COLOR / NO GLOBAL OVERRIDE
+================================ */
 
+@media (max-width: 768px) {
+
+  /* ONLY card containers */
+  .card-grid,
+  .experience-grid,
+  .about-grid,
+  .stack-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Cards full width */
+  .card,
+  .experience-card,
+  .about-card,
+  .stack-card {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+  }
+}

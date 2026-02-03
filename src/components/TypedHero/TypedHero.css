@@ -1,0 +1,41 @@
+/* ===============================
+   TYPED HERO – DESKTOP (UNCHANGED)
+================================ */
+
+.typed-hero {
+  display: inline-block;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+/* Cursor */
+.typed-cursor {
+  display: inline-block;
+  margin-left: 6px;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* =================================================
+   MOBILE FIX ONLY — NO DESKTOP CHANGE
+================================================== */
+
+@media (max-width: 768px) {
+  .typed-hero {
+    display: inline-block;
+    max-width: 100%;
+    word-break: break-word;
+    white-space: normal; /* 🔥 prevents overflow */
+    line-height: 1.1;
+  }
+
+  .typed-cursor {
+    margin-left: 4px;
+  }
+}

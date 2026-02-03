@@ -1,7 +1,6 @@
 import "./Navbar.css";
 
 const Navbar = () => {
-
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (!section) return;

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import "./Landing.css";
 import "../../styles/grid.css";
+
 import Navbar from "../../components/Navbar/Navbar";
 import CurrentDesign from "../../components/CurrentDesign/CurrentDesign";
 import SystemTerminal from "../../components/SystemTerminal/SystemTerminal";
@@ -9,28 +10,32 @@ import TypedHero from "../../components/TypedHero/TypedHero";
 const Landing = () => {
   const landingRef = useRef(null);
 
-  
+ useEffect(() => {
+  const section = landingRef.current;
+  if (!section) return;
 
-  useEffect(() => {
-    const section = landingRef.current;
-    if (!section) return;
+  const handleScroll = () => {
+    if (window.innerWidth <= 768) {
+      section.style.transform = "none";
+      return;
+    }
 
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
+    section.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+  };
 
-      // 🔥 NATURAL PARALLAX (always smooth)
-      section.style.transform = `translateY(${scrollY * 0.3}px)`;
-    };
+  handleScroll(); // 🔥 important
+  window.addEventListener("scroll", handleScroll, { passive: true });
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
 
   return (
-    <section ref={landingRef} id="landing"  className="landing grid-bg">
+    <section
+      ref={landingRef}
+      id="landing"
+      className="landing grid-bg"
+    >
       <Navbar />
 
       <div className="hero-text">
@@ -54,7 +59,7 @@ const Landing = () => {
       <div className="bottom-strip">
         <div className="marquee-track">
           <div className="marquee-content">
-            <span>AVAILABLE FOR FREELANCING|</span>
+            <span>AVAILABLE FOR FREELANCING</span>
             <span>POSTER DESIGN</span>
             <span>WEBSITE DEVELOPMENT</span>
             <span>BRAND PROMOTION</span>

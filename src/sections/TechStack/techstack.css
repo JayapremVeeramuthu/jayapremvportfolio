@@ -217,3 +217,281 @@
   overflow: hidden;
   padding: 28px 0;
 }
+/* =====================================================
+   🔥 TSF – MOBILE FIX (DESKTOP SAFE)
+===================================================== */
+@media (max-width: 768px) {
+
+  /* SECTION */
+  .tsf-section {
+    padding: 80px 16px;
+    overflow: visible;              /* 🔥 IMPORTANT */
+  }
+
+  /* TITLE */
+  .tsf-title {
+    font-size: 42px;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  /* CAPSULE */
+  .tsf-capsule {
+    height: auto;
+    padding: 120px;                  /* 🔥 more breathing space */
+    border-radius: 140px;
+    overflow: hidden;               /* keep inside */
+    position: relative;
+  }
+
+  /* PROFILE IMAGE */
+  .tsf-profile {
+    left: 50%;
+    bottom: -30px;
+    height: 380px;
+    transform: translateX(-50%) translateY(-55%) rotate(-6deg);
+    opacity: 0.9;
+    z-index: 4;
+  }
+
+  /* ICON BASE */
+  .tsf-icon {
+    width: 54px;
+    filter: blur(0.3px);
+    animation-duration: 5s;
+    z-index: 6;                     /* 🔥 above profile */
+  }
+
+  /* LEFT ICONS */
+  .ps     { left: 16px; top: 120px; }
+  .figma  { left: 36px; top: 60px; }
+  .lr     { left: 56px; top: 180px; width: 68px; }
+  .wp     { left: 20px; top: 230px; }
+
+  /* RIGHT ICONS */
+  .html   { right: 36px; top: 70px; }
+  .js     { right: 20px; top: 120px; }
+  .css    { right: 56px; top: 180px; }
+  .react  { right: 20px; top: 230px; }
+  .java   { right: 76px; top: 140px; }
+
+  /* ================= SERVICE BAR ================= */
+  .tsf-service {
+    clear: both;
+    position: relative;
+    margin-top: 40px;
+    min-height: 56px; 
+    z-index: 10;              /* 🔥 prevents overwrite */
+    padding: 12px 0;
+
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  /* MARQUEE TEXT */
+   .tsf-marquee-track span {
+    font-size: 16px;
+    line-height: 1.4;               
+    padding-right: 32px;
+    white-space: nowrap;
+    display: inline-block;
+  }
+}
+@media (max-width: 768px) {
+
+  /* SERVICE BAR */
+  .tsf-service {
+    padding: 18px 0;
+  }
+
+  /* MARQUEE TEXT WRAP */
+  .tsf-marquee-track span {
+    display: block;
+    max-width: 450vw;
+    white-space: normal;          /* allow wrap */
+    font-size: 14px;
+    line-height: 1.0;
+    font-weight: 700;
+    color: #000;
+  }
+
+  /* 🔥 FAKE BULLET POINTS (CSS ONLY) */
+  .tsf-marquee-track span::before {
+    content: "• ";
+    font-weight: 900;
+  }
+
+  .tsf-marquee-track span {
+    text-indent: -12px;           /* align bullet */
+    padding-left: 12px;
+  }
+}
+
+
+
+
+/* ===============================
+   TSF SERVICE MARQUEE – FIXED
+================================ */
+
+.tsf-service {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 40px;
+
+  background-color: #baff00;
+  overflow: hidden;
+  padding: 28px 0;
+
+  /* grid stays */
+  background-image:
+    linear-gradient(rgba(0,0,0,0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.15) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* TRACK */
+.tsf-marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  transform: translate3d(0,0,0);
+  animation: tsf-marquee-loop 18s linear infinite;
+}
+
+/* DUPLICATED BLOCK */
+.tsf-marquee-content {
+  display: flex;
+  gap: 80px;
+  flex-shrink: 0;
+}
+
+/* TEXT */
+.tsf-marquee-content span {
+  white-space: nowrap;
+  font-size: 48px;
+  font-weight: 900;
+  color: #000;
+  flex-shrink: 0;
+}
+
+/* 🔥 CORRECT LOOP */
+@keyframes tsf-marquee-loop {
+  from {
+    transform: translate3d(0,0,0);
+  }
+  to {
+    transform: translate3d(-50%,0,0);
+  }
+}
+@media (max-width: 768px) {
+  .tsf-marquee-track {
+    animation-duration: 14s;
+  }
+
+  .tsf-marquee-content span {
+    font-size: 16px;
+    padding-right: 32px;
+  }
+}
+
+.tsf-service {
+  position: relative;
+  width: 100%;              /* 🔥 NOT 100vw */
+  margin-top: 64px;         /* 🔥 space from cards */
+  margin-bottom: 64px;      /* 🔥 space below */
+
+  background-color: #baff00;
+  overflow: hidden;
+  padding: 28px 0;
+
+  /* grid */
+  background-image:
+    linear-gradient(rgba(0,0,0,0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.15) 1px, transparent 1px);
+  background-size: 48px 48px;
+
+  z-index: 5;               /* above bg, below content */
+}
+
+/* ===============================
+   TSF SERVICE MARQUEE – CLEAN
+================================ */
+
+.tsf-service {
+  position: relative;
+  width: 100%;                 /* 🔥 NO 100vw */
+  margin: 64px 0;              /* 🔥 spacing prevents overlay */
+
+  background-color: #baff00;
+  overflow: hidden;
+  padding: 28px 0;
+  z-index: 5;
+
+  /* GRID */
+  background-image:
+    linear-gradient(rgba(0,0,0,0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.15) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* TRACK */
+.tsf-marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  transform: translate3d(0,0,0);
+  animation: tsf-marquee-loop 18s linear infinite;
+}
+
+/* DUPLICATED CONTENT BLOCK */
+.tsf-marquee-content {
+  display: flex;
+  gap: 80px;
+  flex-shrink: 0;
+}
+
+/* TEXT */
+.tsf-marquee-content span {
+  white-space: nowrap;
+  font-size: 48px;
+  font-weight: 900;
+  color: #000;
+}
+
+/* LOOP */
+@keyframes tsf-marquee-loop {
+  from {
+    transform: translate3d(0,0,0);
+  }
+  to {
+    transform: translate3d(-50%,0,0);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .tsf-marquee-track {
+    animation-duration: 14s;
+  }
+
+  .tsf-marquee-content span {
+    font-size: 16px;
+    padding-right: 32px;
+  }
+}
+@media (max-width: 768px) {
+
+  /* 🔥 FORCE CLEARANCE ABOVE MARQUEE */
+  .tsf-service {
+    margin-top: 80px !important;   /* push it down */
+    margin-bottom: 48px !important;
+    position: relative;
+    z-index: 10;
+  }
+
+}
+ 
